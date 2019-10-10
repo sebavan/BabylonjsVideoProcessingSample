@@ -36,7 +36,7 @@
     },
     "devDependencies": {
         "@babylonjs/core": "^4.1.0-alpha.23",
-        "@babylonjs/controls": "^1.0.0-alpha.15",
+        "@babylonjs/controls": "^1.0.0-alpha.16",
         "ts-loader": "^5.3.3",
         "typescript": "^3.6.3",
         "webpack": "^4.32.2",

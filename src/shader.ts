@@ -63,7 +63,21 @@ void main(void)
     float tileLuminance = getLuminance(tileColor.rgb);
 
     // Adapt luma to effect and pick from the palette
-    vec4 finalColor = palette[int(tileLuminance * 3. + lumaOffset)];
+    int colorChoice = int(tileLuminance * 3. + lumaOffset);
+    #ifdef WEBGL2
+        vec4 finalColor = palette[colorChoice];
+    #else
+        vec4 finalColor = vec4(0.);
+        if (colorChoice == 0) {
+            finalColor = palette[0];
+        } else if (colorChoice == 1) {
+            finalColor = palette[1];
+        } else if (colorChoice == 2) {
+            finalColor = palette[2];
+        } else {
+            finalColor = palette[3];
+        }
+    #endif
 
     // Are we on a line.
     if (onGridline(gl_FragCoord.x, gridSize) || onGridline(gl_FragCoord.y, gridSize))

@@ -78,13 +78,18 @@ function createVideoTextureFromStreamAsync(engine: ThinEngine, stream: MediaStre
 
     return new Promise<HtmlElementTexture>((resolve) => {
         let onPlaying = () => {
-                resolve(new HtmlElementTexture("video", video, {
-                    engine,
-                    scene: null,
-                    
-                })
-            );
+            const webcamTexture = new HtmlElementTexture("video", video, {
+                engine,
+                scene: null,
+            });
+
+            // No repeat is needed here for WebGL1.
+            webcamTexture.wrapU = Constants.TEXTURE_CLAMP_ADDRESSMODE;
+            webcamTexture.wrapV = Constants.TEXTURE_CLAMP_ADDRESSMODE;
+
             video.removeEventListener("playing", onPlaying);
+
+            resolve(webcamTexture);
         };
 
         video.addEventListener("playing", onPlaying);
