@@ -1,0 +1,46 @@
+{
+    "name": "babylonjs-video-processing-sample",
+    "version": "1.0.0",
+    "description": "Quick Demo of using the Babylon.js controls to process videos in real time.",
+    "author": {
+        "name": "Sebastien VANDENBERGHE"
+    },
+    "contributors": [
+        "Sebastien VANDENBERGHE"
+    ],
+    "keywords": [
+        "controls",
+        "video",
+        "acceleration",
+        "3D",
+        "2D",
+        "javascript",
+        "html5",
+        "webgl",
+        "webgl2",
+        "webgpu",
+        "babylon"
+    ],
+    "license": "MIT",
+    "readme": "README.md",
+    "typings": "dist/src/index.d.ts",
+    "main": "dist/src/index.js",
+    "files": [
+        "dist/src/**",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "webpack --env=prod",
+        "start": "npx webpack-dev-server -d --open",
+        "devServer": "npx webpack-dev-server -d"
+    },
+    "devDependencies": {
+        "@babylonjs/core": "^4.1.0-alpha.23",
+        "@babylonjs/controls": "^1.0.0-alpha.15",
+        "ts-loader": "^5.3.3",
+        "typescript": "^3.6.3",
+        "webpack": "^4.32.2",
+        "webpack-cli": "^3.3.2",
+        "webpack-dev-server": "^3.4.1"
+    }
+}
