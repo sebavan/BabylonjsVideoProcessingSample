@@ -19,3 +19,7 @@ For VSCode users, if you have installed the Chrome Debugging extension, you can 
 ## It does not work !
 
 Please ensure you are running on a Chromium based browser and that your WebCam is plugged in :-)
+
+## Live Demo
+
+All available in the famous [Babylon.js website](https://www.babylonjs.com/demos/videoprocessing/).
