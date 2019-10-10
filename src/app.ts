@@ -104,7 +104,7 @@ function createVideoTextureFromStreamAsync(engine: ThinEngine, stream: MediaStre
 function getWebcamTextureAsync(engine: ThinEngine): Promise<HtmlElementTexture> {
     if (navigator.mediaDevices) {
         return navigator.mediaDevices.getUserMedia({
-                video: true,
+                video: { facingMode: "user" },
                 audio: false
             })
             .then((stream) => {
