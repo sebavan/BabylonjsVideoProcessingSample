@@ -58,6 +58,9 @@ void main(void)
     const float screenSize = 512.;
     vec2 tileUV = floor(gl_FragCoord.xy / gridSize) * gridSize / screenSize;
 
+    // Mirror for selfie;
+    tileUV.x = 1. - tileUV.x;
+
     // Square fetch of luminance
     vec4 tileColor = texture2D(textureSampler, tileUV);
     float tileLuminance = getLuminance(tileColor.rgb);

@@ -23,3 +23,5 @@ Please ensure you are running on a Chromium based browser and that your WebCam i
 ## Live Demo
 
 All available in the famous [Babylon.js website](https://www.babylonjs.com/demos/videoprocessing/).
+
+And please have a read at the associated article on [Medium](https://medium.com/@babylonjs/web-video-processing-made-easy-714487f7443b)
