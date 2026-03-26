@@ -58,23 +58,13 @@ async function main() {
  * This is fully available in the Babylon Video Texture and is only here for education purpose.
  */
 function createVideoTextureFromStreamAsync(engine: ThinEngine, stream: MediaStream): Promise<HtmlElementTexture> {
-    var video = document.createElement("video");
+    const video = document.createElement("video");
     video.setAttribute('autoplay', '');
     video.setAttribute('muted', 'true');
     video.setAttribute('playsinline', '');
     video.muted = true;
 
-    if (video.mozSrcObject !== undefined) {
-        // hack for Firefox < 19
-        video.mozSrcObject = stream;
-    } else {
-        if (typeof video.srcObject == "object") {
-            video.srcObject = stream;
-        } else {
-            window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
-            video.src = (window.URL && window.URL.createObjectURL(stream));
-        }
-    }
+    video.srcObject = stream;
 
     return new Promise<HtmlElementTexture>((resolve) => {
         let onPlaying = () => {
